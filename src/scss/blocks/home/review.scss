@@ -1,0 +1,94 @@
+.review {
+  margin-bottom: 50px;
+
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0 auto 40px;
+    text-align: center;
+    max-width: 800px;
+    color: #686868;
+  }
+}
+
+.comment-card {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-column-gap: 25px;
+  grid-row-gap: 10px;
+
+  p {
+    text-align: left;
+    margin: 0;
+  }
+
+  .profession {
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    margin: 10px auto 0;
+    color: #35A22C;
+  }
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.comment {
+  border: 1px solid #E5E5E5;
+  border-radius: 5px;
+  padding: 30px 45px;
+  box-sizing: border-box;
+  animation: showCard .3s ease-in;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #8b8b8b;
+  display: block;
+  margin: 50px 20px 10px 0;
+  cursor: pointer;
+  transition: .3s;
+
+  &:last-child {
+    margin-right: 0;
+  }
+  
+  &:hover {
+    background-color: #35A22C;
+    transform: scale(1.2);
+  }
+}
+
+.dot-active {
+  background-color: #35A22C;
+  transform: scale(1.2);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes showCard {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

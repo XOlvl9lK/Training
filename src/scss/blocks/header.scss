@@ -1,0 +1,55 @@
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  color: white;
+
+  h1{
+    margin-left: 15px;
+    font-size: 36px;
+    line-height: 10px;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:visited {
+      color: white;
+    }
+  }
+}
+
+.navlink {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: 'Hind', 'Arial', sans-serif;
+  color: white;
+
+
+  a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    transition: color .2s ease-in;
+
+    &:visited {
+      color: white;
+    }
+
+    &:hover {
+      color: #5cb35c;
+    }
+  }
+}

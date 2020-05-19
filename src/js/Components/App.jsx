@@ -1,9 +1,17 @@
 import React from 'react';
+import Header from "./header/Header.jsx";
+import Footer from "./footer/Footer.jsx";
+import Upstairs from "./upstairs/Upstairs.jsx";
 
-const App = () => {
+const App = ({ children }) => {
 
     return (
-            <h1>Hello world</h1>
+        <>
+            <Header />
+            {children}
+            <Upstairs />
+            <Footer />
+        </>
     );
 };
 

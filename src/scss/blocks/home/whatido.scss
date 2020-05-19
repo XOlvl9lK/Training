@@ -1,0 +1,60 @@
+.whatido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  p {
+    max-width: 800px;
+  }
+}
+
+.projects-buttons {
+  display: flex;
+  flex-direction: row;
+
+
+  p {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background-color: #23a423;
+      border-color: #23a423;
+      color: white;
+    }
+  }
+
+  .filter-active {
+    background-color: #23a423;
+    border: 1px solid #23a423;
+    color: white;
+  }
+}
+
+.all-projects {
+  align-self: normal;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+  grid-column-gap: 20px;
+  grid-row-gap: 15px;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+}
+
+

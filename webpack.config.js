@@ -18,7 +18,13 @@ const cssLoaders = loader => {
                 reloadAll: true
             }
         },
-        'css-loader',
+        {
+            loader: 'css-loader',
+            options: {
+                sourceMap: true,
+                url: false
+            }
+        },
         {
             loader: 'postcss-loader',
             options: {
@@ -54,14 +60,16 @@ const optimization =() => {
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
-    entry: './js/index.js',
+    entry: ['@babel/polyfill', './js/index.js'],
     output: {
-        filename: "./js/index.js"
+        filename: "./js/index.js",
+        publicPath: "/"
     },
     optimization: optimization(),
     devServer: {
         port: 4200,
-        hot: isDev
+        hot: isDev,
+        historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({
