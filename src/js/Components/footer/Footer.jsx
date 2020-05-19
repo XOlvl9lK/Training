@@ -1,8 +1,6 @@
 import React from 'react';
 
-const Footer = () => {
-
-    return (
+const Footer = () => (
         <footer className="footer">
             <div className="container">
                 <div className="icons">
@@ -16,7 +14,6 @@ const Footer = () => {
                 <p>&#169; 2020 My Website. All rights reserved | Designed by W3layouts</p>
             </div>
         </footer>
-    );
-};
+);
 
 export default Footer;

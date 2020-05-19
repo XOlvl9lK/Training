@@ -1,0 +1,30 @@
+.upstairs {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  width: 35px;
+  height: 35px;
+  font-size: 30px;
+  line-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #35A22C;
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  transition: .2s;
+
+  span {
+    transform: translateY(-2px);
+  }
+
+  &:hover {
+    background-color: #3abd30;
+  }
+}
+
+.upstairs-show {
+  opacity: 1;
+}

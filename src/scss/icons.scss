@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?mqjktf');
-  src:  url('../fonts/icomoon.eot?mqjktf#iefix') format('embedded-opentype'),
-  url('../fonts/icomoon.ttf?mqjktf') format('truetype'),
-  url('../fonts/icomoon.woff?mqjktf') format('woff'),
-  url('../fonts/icomoon.svg?mqjktf#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?hh0me2');
+  src:  url('../fonts/icomoon.eot?hh0me2#iefix') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?hh0me2') format('truetype'),
+  url('../fonts/icomoon.woff?hh0me2') format('woff'),
+  url('../fonts/icomoon.svg?hh0me2#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -23,11 +23,6 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-%icon-style {
-  font-size: 48px;
-  color: #239123;
 }
 
 .icon-camera:before {
@@ -49,6 +44,9 @@
 .icon-linkedin:before {
   content: "\f0e1";
 }
+.icon-angle-up:before {
+  content: "\f106";
+}
 .icon-instagram:before {
   content: "\f16d";
 }
@@ -67,4 +65,9 @@
 .icon-sheqel:before {
   content: "\f20b";
   @extend %icon-style;
+}
+
+%icon-style {
+  font-size: 48px;
+  color: #239123;
 }
