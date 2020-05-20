@@ -15,7 +15,7 @@ const CommentCard = () => {
     }
 
     function handleCardChange(event, card) {
-        document.getElementsByClassName("dot-active")[0].classList.toggle("dot-active");
+        document.querySelector('.dot-active').classList.toggle("dot-active");
         setCurrentCard(card * 3);
         event.target.classList.toggle("dot-active");
     }
