@@ -1,0 +1,45 @@
+.about-me {
+
+  figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0;
+
+    img {
+      max-width: 43.5%;
+      padding: 30px;
+      flex-shrink: 1;
+    }
+
+    figcaption {
+      padding: 30px;
+
+      h1 {
+        font-size: 34px;
+      }
+
+      p {
+        color: #606060;
+      }
+
+      button {
+        margin-top: 50px;
+        width: 140px;
+        height: 50px;
+        color: white;
+        font-weight: 700;
+        font-size: 16px;
+        background-color: #35A22C;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: .3s;
+        
+        &:hover {
+          background-color: #3abd30;
+        }
+      }
+    }
+  }
+}

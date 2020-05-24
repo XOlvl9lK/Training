@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 const Upstairs = () => {
+
     useEffect(() => {
         window.addEventListener('scroll', showUpstairs);
     }, []);

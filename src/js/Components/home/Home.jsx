@@ -6,18 +6,15 @@ import WhatIDo from "./components/whatIDo/WhatIDo.jsx";
 import Practice from "./components/Practice.jsx";
 import Review from "./components/review/Review.jsx";
 
-const Home = () => {
-
-    return (
-        <>
-            <MainBanner />
-            <Welcome />
-            <Job />
-            <WhatIDo />
-            <Practice />
-            <Review />
-        </>
-    );
-};
+const Home = () => (
+    <>
+        <MainBanner />
+        <Welcome />
+        <Job />
+        <WhatIDo />
+        <Practice />
+        <Review />
+    </>
+);
 
 export default Home;

@@ -53,3 +53,60 @@
     }
   }
 }
+
+.arrow {
+  display: flex;
+  align-items: center;
+  transition: color .2s ease-in;
+
+
+  span {
+    font-size: 8px;
+    margin-left: 5px;
+  }
+
+  &:hover {
+    color: #5cb35c;
+  }
+}
+
+.drop-menu {
+  align-self: self-start;
+
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: white;
+    border-radius: 5px;
+    min-width: 150px;
+    position: absolute;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    height: 80px;
+    transform: translateX(-38px);
+    transition: .2s ease;
+    opacity: 0;
+    pointer-events: none;
+
+
+    a {
+      color: black;
+
+      &:visited {
+        color: black;
+      }
+
+      &:hover {
+        color: #5cb35c;
+      }
+    }
+  }
+
+  &:hover {
+    div {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}

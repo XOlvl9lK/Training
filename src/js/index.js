@@ -7,18 +7,19 @@ import '../scss/style.scss';
 import Home from './Components/home/Home.jsx'
 import About from './Components/about/About.jsx'
 import Services from './Components/services/Services.jsx'
-import Pages from "./Components/pages/Pages.jsx";
 import Contact from "./Components/contact/Contact.jsx";
+import News from "./Components/pages/news/News.jsx";
+import Blog from "./Components/pages/blog/Blog.jsx";
 
 render((
-    // <App />
     <BrowserRouter>
         <App>
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route path='/about' component={About} />
                 <Route path='/services' component={Services} />
-                <Route path='/pages' component={Pages} />
+                <Route path='/news' component={News} />
+                <Route path='/blog' component={Blog} />
                 <Route path='/contact' component={Contact} />
             </Switch>
         </App>

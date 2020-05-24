@@ -1,0 +1,51 @@
+.about-welcome-wrap {
+  background-color: #F8F9FA;
+}
+
+.about-welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    margin-top: 50px;
+  }
+
+  p {
+    max-width: 800px;
+  }
+}
+
+.about-cards {
+  margin-top: 50px;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.card {
+  margin-right: 20px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 5px;
+  transition: .3s;
+
+
+  &:hover {
+    box-shadow: 2px 2px 10px #c6c6c6, -2px -2px 10px #c6c6c6;
+  }
+
+  h2 {
+    font-weight: 300;
+  }
+
+  span {
+    color: #35A22C;
+    font-size: 32px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

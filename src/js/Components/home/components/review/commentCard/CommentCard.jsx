@@ -21,7 +21,6 @@ const CommentCard = () => {
     }
 
     return (
-
         <CommentWrap currentCard={currentCard}>
             <div className="dots">
                 {dots}
