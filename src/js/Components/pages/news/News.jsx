@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import RecentPagesBanner from "../../recentPagesBanner/RecentPagesBanner.jsx"
-import Article from "./components/Article.jsx";
 import Search from "./components/Search.jsx";
 import NewsFilter from "./components/NewsFilter.jsx";
 import Loading from "./components/Loading.jsx";
 import NewsPage from "./components/NewsPage.jsx";
 
-const ACCESS_CONTROL = 'https://cors-anywhere.herokuapp.com/';
-const NEWS_API = 'https://newsapi.org/v2/';
-const TOP_HEADLINES = 'top-headlines?';
-const EVERYTHING = 'everything?';
-const API_KEY = 'apiKey=8c633bf56a644d0c96bbdee21772ae72';
-const DEFAULT_PATH = `${ACCESS_CONTROL}${NEWS_API}${TOP_HEADLINES}country=us&${API_KEY}`;
+export const ACCESS_CONTROL = 'https://cors-anywhere.herokuapp.com/';
+export const NEWS_API = 'https://newsapi.org/v2/';
+export const TOP_HEADLINES = 'top-headlines?';
+export const EVERYTHING = 'everything?';
+export const API_KEY = 'apiKey=8c633bf56a644d0c96bbdee21772ae72';
+export const DEFAULT_PATH = `${ACCESS_CONTROL}${NEWS_API}${TOP_HEADLINES}country=us&${API_KEY}`;
 
 const News = () => {
     const [ articles, setArticles ] = useState('');

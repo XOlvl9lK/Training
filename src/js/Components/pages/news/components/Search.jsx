@@ -16,7 +16,7 @@ const Search = ({ keyWord, handleInputChange, startSearch }) => {
     }
 
     return (
-        <div className="search" onClick={() => console.log(window.pageYOffset)}>
+        <div className="search">
             <h2>Search</h2>
             <input
                 type="text"

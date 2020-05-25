@@ -1,29 +1,15 @@
 import { LEAVE_MESSAGE, REMOVE_MESSAGE } from '../constants'
+import { load } from 'redux-localstorage-simple';
 
-const MESSAGES = [
-    {
-        id: 1,
-        name: 'Denis',
-        message: 'Dorow'
-    },
-    {
-        id: 2,
-        name: 'Vasya',
-        message: 'Priv'
-    },
-    {
-        id: 3,
-        name: 'Petya',
-        message: 'Hallow'
-    },
-    {
-        id: 4,
-        name: 'Kolya',
-        message: 'Ku'
-    },
-];
+let MESSAGES = load({ namespace: 'message-storage' });
 
-const messages = (state = MESSAGES, { id, name, message, type }) => {
+if (!MESSAGES || !MESSAGES.messages || !MESSAGES.messages.length) {
+    MESSAGES = {
+        messages: [],
+    }
+}
+
+const messages = (state = MESSAGES.messages, { id, name, message, type }) => {
     switch (type) {
         case LEAVE_MESSAGE:
             return [

@@ -1,18 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import { leaveMessage, removeMessage } from '../../../actions/actionCreator'
 
 import RecentPagesBanner from "../../recentPagesBanner/RecentPagesBanner.jsx";
 import Message from "./components/Message.jsx";
 import LeaveMessage from "./components/LeaveMessage.jsx";
+import MessageBar from "./components/MessageBar.jsx";
 
 
 class Blog extends React.Component {
 
     state = {
         name: '',
-        message: ''
+        message: '',
+        modalVisible: false
     };
 
     handleInputChange = ({ target: { value } }, inputType) => {
@@ -24,21 +27,22 @@ class Blog extends React.Component {
     addMessage = (event) => {
         event.preventDefault();
         const { name, message } = this.state;
+        const { leaveMessage } = this.props;
 
-        if (name.length > 0 && message.length > 0) {
-            const { leaveMessage } = this.props;
+        leaveMessage((new Date()).getTime(), name, message);
 
-            leaveMessage((new Date()).getTime(), name, message);
+        this.setState({
+            name: '',
+            message: '',
+        })
+    };
 
-            this.setState({
-                name: '',
-                message: '',
-            })
-        }
+    toggleModalVisibility = () => {
+        this.setState({ modalVisible: !this.state.modalVisible });
     };
 
     render() {
-        const { name, message } = this.state;
+        const { name, message, modalVisible } = this.state;
         const { messages, removeMessage } = this.props;
 
         return (
@@ -49,12 +53,19 @@ class Blog extends React.Component {
                         messages={messages}
                         removeMessage={removeMessage}
                     />
-                    <LeaveMessage
-                        addMessage={this.addMessage}
-                        handleInputChange={this.handleInputChange}
-                        name={name}
-                        message={message}
-                    />
+                    <TransitionGroup>
+                        {modalVisible && (
+                            <CSSTransition classNames="options" timeout={300}>
+                                <LeaveMessage
+                                    addMessage={this.addMessage}
+                                    handleInputChange={this.handleInputChange}
+                                    name={name}
+                                    message={message}
+                                />
+                            </CSSTransition>
+                        )}
+                    </TransitionGroup>
+                    <MessageBar toggleModalVisibility={this.toggleModalVisibility} modalVisible={modalVisible}/>
                 </div>
             </>
         );
