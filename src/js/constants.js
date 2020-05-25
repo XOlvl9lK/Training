@@ -1,0 +1,2 @@
+export const LEAVE_MESSAGE = 'LEAVE_MESSAGE';
+export const REMOVE_MESSAGE = 'REMOVE_MESSAGE';
