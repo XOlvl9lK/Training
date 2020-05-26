@@ -62,18 +62,21 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: ['@babel/polyfill', './js/index.js'],
     output: {
-        filename: "./js/index.js",
-        publicPath: "/"
+        filename: "./js/[name].[hash].js",
+        path: path.resolve(__dirname, 'dist'),
     },
+    devtool: isDev ? 'source-map' : '',
+    mode: "production",
     optimization: optimization(),
     devServer: {
         port: 4200,
         hot: isDev,
-        historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: "./html/index.html",
+            filename: "index.html",
+
             minify: {
                 collapseWhitespace: isProd
             }
@@ -122,6 +125,18 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/,
                 use: cssLoaders('sass-loader')
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'img'
+                        }
+                    }
+                ],
+
             }
         ]
     }
