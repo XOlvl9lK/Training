@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const AboutMe = () => (
     <div className="about-me container">
         <figure>
-            <img src="img/about.jpg" alt="about me"/>
+            <img src="../img/about.jpg" alt="about me"/>
             <figcaption>
                 <h1>Failure Is The Condiment That Gives Sucess It'S Flavour</h1>
                 <p>
