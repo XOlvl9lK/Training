@@ -18,12 +18,13 @@ render((
         <BrowserRouter>
             <App>
                 <Switch>
-                    <Route exact path='/' component={Home} />
-                    <Route path='/about' component={About} />
-                    <Route path='/services' component={Services} />
-                    <Route path='/news' component={News} />
-                    <Route path='/blog' component={Blog} />
-                    <Route path='/contact' component={Contact} />
+                    <Route exact path='/Training/' component={Home} />
+                    <Route path='/Training/about/' component={About} />
+                    <Route path='/Training/services/' component={Services} />
+                    <Route path='/Training/news/' component={News} />
+                    <Route path='/Training/blog/' component={Blog} />
+                    <Route path='/Training/contact/' component={Contact} />
+                    <Route path='*' component={Home} />
                 </Switch>
             </App>
         </BrowserRouter>

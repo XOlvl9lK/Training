@@ -62,7 +62,7 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: ['@babel/polyfill', './js/index.js'],
     output: {
-        filename: "./js/[name].[hash].js",
+        filename: "./js/bundle.js",
         path: path.resolve(__dirname, 'dist'),
     },
     devtool: isDev ? 'source-map' : '',
