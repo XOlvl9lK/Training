@@ -2,9 +2,11 @@ import React from 'react';
 
 const Article = ({ title, urlToImage, description, url }) => {
 
+let image = `https://static01.nyt.com/${urlToImage}`
+
     return (
         <div className="article">
-            <img src={urlToImage} alt=""/>
+            <img src={image} alt=""/>
             <div className="description">
                 <h2>{title}</h2>
                 <p>{description}</p>

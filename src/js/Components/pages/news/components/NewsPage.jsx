@@ -16,11 +16,11 @@ const NewsPage = ({ currentPage, setCurrentPage, articles }) => {
             }
             pages.push(
                 <Article
-                    key={articles[i].title}
-                    title={articles[i].title}
-                    description={articles[i].description}
-                    urlToImage={articles[i].urlToImage}
-                    url={articles[i].url}
+                    key={articles[i].abstract}
+                    title={articles[i].abstract}
+                    description={articles[i].lead_paragraph}
+                    urlToImage={articles[i].multimedia[0].url}
+                    url={articles[i].web_url}
                 />
             )
         }
@@ -31,13 +31,13 @@ const NewsPage = ({ currentPage, setCurrentPage, articles }) => {
     for (let i = 0; i < Math.ceil(articles.length / 4); i++) {
         if (i === 0) {
             pagination.push(
-                <p key={articles[i].title} onClick={event => handlePageChange(event, i)} className="page-number page-number-active">
+                <p key={articles[i].abstract} onClick={event => handlePageChange(event, i)} className="page-number page-number-active">
                     {i+1}
                 </p>
             )
         } else {
             pagination.push(
-                <p key={articles[i].title} onClick={event => handlePageChange(event, i)} className="page-number">
+                <p key={articles[i].abstract} onClick={event => handlePageChange(event, i)} className="page-number">
                     {i+1}
                 </p>
             )

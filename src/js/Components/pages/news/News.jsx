@@ -6,11 +6,11 @@ import Loading from "./components/Loading.jsx";
 import NewsPage from "./components/NewsPage.jsx";
 
 export const ACCESS_CONTROL = 'https://cors-anywhere.herokuapp.com/';
-export const NEWS_API = 'https://newsapi.org/v2/';
+export const NEWS_API = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?sort=relevance&page=0';
 export const TOP_HEADLINES = 'top-headlines?';
 export const EVERYTHING = 'everything?';
-export const API_KEY = 'apiKey=8c633bf56a644d0c96bbdee21772ae72';
-export const DEFAULT_PATH = `${ACCESS_CONTROL}${NEWS_API}${TOP_HEADLINES}country=us&${API_KEY}`;
+export const API_KEY = 'api-key=YwCdKi4UdW7GqtZiNfMELgG2bYu84cOz';
+export const DEFAULT_PATH = `${NEWS_API}&${API_KEY}`;
 
 const News = () => {
     const [ articles, setArticles ] = useState('');
@@ -21,14 +21,16 @@ const News = () => {
     useEffect(() => {
         fetch(apiUrl)
             .then(response => response.json())
-            .then(json => setArticles(json.articles));
+            .then(json => setArticles(json.response.docs));
     }, [apiUrl]);
 
     function changeUrl(event, query) {
         if (query) {
-            setArticles("");
-            let q = encodeURI(query);
-            setApiUrl(`${ACCESS_CONTROL}${NEWS_API}${EVERYTHING}q=${q}&${API_KEY}`);
+            if (!query) {
+                setApiUrl(DEFAULT_PATH);
+            }
+            setArticles('');
+            setApiUrl(`${NEWS_API}&q=${query}&${API_KEY}`);
         } else {
             setApiUrl(DEFAULT_PATH);
         }

@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import aboutImg from '../../../../img/about.jpg'
 
 const AboutMe = () => (
     <div className="about-me container">
         <figure>
-            <img src="../img/about.jpg" alt="about me"/>
+            <img src={aboutImg} alt="about me"/>
             <figcaption>
                 <h1>Failure Is The Condiment That Gives Sucess It'S Flavour</h1>
                 <p>
